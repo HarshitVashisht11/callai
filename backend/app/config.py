@@ -13,15 +13,10 @@ class Settings(BaseSettings):
     
     # Resend Email
     resend_api_key: str = ""
-    email_from: str = "noreply@example.com"
+    email_from: str = ""
     
-    # CORS
-    cors_origins: str = "http://localhost:3000"
-    frontend_url: str = "http://localhost:3000"
-    
-    @property
-    def cors_origins_list(self) -> List[str]:
-        return [origin.strip() for origin in self.cors_origins.split(",")]
+    frontend_url: str = ""
+    # Note: CORS origins removed for now
     
     class Config:
         env_file = ".env"
